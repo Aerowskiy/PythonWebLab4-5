@@ -64,13 +64,13 @@ def create_deal(request):
 
 
 def deal_list(request):
-    orders = Deal.objects.all()
-    return render(request, 'deal_list.html', {'orders': orders})
+    deals = Deal.objects.all()
+    return render(request, 'deal_list.html', {'orders': deals})
 
 
 def deal_detail(request, order_id):
-    order = get_object_or_404(Deal, id=order_id)
-    context = {'order': order}
+    deal = get_object_or_404(Deal, id=order_id)
+    context = {'order': deal}
     return render(request, 'deal_detail.html', context)
 
 
